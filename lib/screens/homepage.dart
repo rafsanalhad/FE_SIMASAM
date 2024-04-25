@@ -7,6 +7,7 @@ import 'package:simasam/screens/edukasipage.dart';
 import 'package:simasam/modules/userdata.dart';
 import 'package:simasam/screens/gamedragsampah.dart';
 import 'package:simasam/screens/gametrashcleanup.dart';
+import 'package:simasam/screens/notificationpage.dart';
 import 'package:simasam/screens/profilpage.dart';
 import 'package:simasam/screens/quizpage.dart';
 
@@ -24,7 +25,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    futureUserData = UserData.connectToApi('1');
+    futureUserData = UserData.connectToApi('21');
     futureUserData.then((value) {
       setState(() {
         name = value.name;
@@ -116,7 +117,18 @@ class _HomePageState extends State<HomePage> {
                               mainAxisAlignment: MainAxisAlignment.end,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Icon(Icons.notifications, color: Colors.white),
+                                IconButton(
+                                  icon: Icon(Icons.notifications,
+                                      color: Colors.white),
+                                  onPressed: () {
+                                    // Menavigasi ke layar baru ketika ikon notifikasi diklik
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => NotificationPage()),
+                                    );
+                                  },
+                                ),
                                 Padding(padding: EdgeInsets.only(left: 20)),
                                 Icon(Icons.search, color: Colors.white),
                               ],

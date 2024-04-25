@@ -28,9 +28,10 @@ class _ProfilPageState extends State<ProfilPage> {
                     child: Column(
                       children: [
                         Container(
+                          padding: EdgeInsets.all(20),
                           width: double.infinity,
                           decoration: BoxDecoration(
-                            color: Color(0xFFF7F7F7),
+                            color: Color(0xFFDFE6DA),
                           ),
                           child: Column(
                             children: [
@@ -51,6 +52,7 @@ class _ProfilPageState extends State<ProfilPage> {
                                   color: Colors.black,
                                 ),
                               ),
+                              Text('#273373420890')
                             ],
                           ),
                         ),
